@@ -1,5 +1,6 @@
 // Week 1 - Functions
 
+
 // In the following exercises, you will need to place your code or answer underneath each
 // exercise prompt.
 

@@ -1,5 +1,6 @@
 // Week 3 - Arrays and Objects
 
+
 // In the following exercises, you will need to place your code or answer underneath each
 // exercise prompt.
 
