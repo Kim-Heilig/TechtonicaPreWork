@@ -20,16 +20,25 @@ console.log("*** Exercise 1");
 // let obj3 = {};
 // keys(obj3); // []
 
-function keys(obj){
+// console.log(Object.keys(obj)); Instructed not to use this way
 
+function keys(obj){
+  let arrOfObjKeys = [];
+  for(let key in obj){
+    arrOfObjKeys.push(key);
+  }return arrOfObjKeys;
 }
 
-// let obj = { a: 1, b: 2, c: 3 };
-// console.log(keys(obj)); // ["a", "b", "c"]
-// let obj2 = { first: 'Matt', last: 'Lane' };
-// console.log(keys(obj2)); // ["first", "last"]
-// let obj3 = {};
-// console.log(keys(obj3)); // []
+console.log("\n    Test case 1");
+let obj = { a: 1, b: 2, c: 3 };
+console.log(keys(obj)); // ["a", "b", "c"]
+console.log("    Test case 2");
+let obj2 = { first: 'Matt', last: 'Lane' };
+console.log(keys(obj2)); // ["first", "last"]
+console.log("    Test case 3");
+let obj3 = {};
+console.log(keys(obj3)); // []
+
 
 console.log("\n*** Exercise 2");
 // Exercise 2. Write a function called values, which accepts an object and returns an array of all of the values in the object.
@@ -43,15 +52,25 @@ console.log("\n*** Exercise 2");
 // values(obj3); // []
 
 function values(obj){
-
+  let arrayOfValues = [];
+  for(let key in obj){
+    arrayOfValues.push(obj[key]);  // this does not work: obj.key (key notation)
+  }return arrayOfValues;
 }
+console.log("\n    Test case 1");
+let objEx2 = { a: 1, b: 2, c: 3 };
+console.log(values(objEx2)); // [1,2,3]
 
-// let obj = { a: 1, b: 2, c: 3 };
-// console.log(values(obj)); // [1,2,3]
-// let obj2 = { first: 'Matt', last: 'Lane', isDogOwner: true };
-// console.log(values(obj2)); // ["Matt", "Lane", true]
-// let obj3 = {};
-// console.log(values(obj3)); // []
+console.log("    Test case 2");
+let obj2Ex2 = { first: 'Matt', last: 'Lane', isDogOwner: true };
+console.log(values(obj2Ex2)); // ["Matt", "Lane", true]
+
+console.log("    Test case 3");
+let obj3Ex2 = {};
+console.log(values(obj3Ex2)); // []
+
+
+
 
 console.log("\n*** Exercise 3");
 // Exercise 3. Write a function called entries, which accepts an object and returns an array of arrays of key-value pairs.
@@ -65,11 +84,37 @@ console.log("\n*** Exercise 3");
 // entries(obj2);
 // [["first","Matt"], ["last","Lane"], ["isDogOwner",true]]
 // let obj3 = {};
-// entries(obj3); // []
+// entries(obj3); 
+// []
+
+
+// not complete !!!!!!!!
 
 function entries(obj){
+  let arrayOfArrays = [];
+  for(let key in obj){
+    arrayOfArrays.push()
+  }
   
 }
+
+
+console.log("\n    Test case 1");
+// let obj1Ex3 = { a: 1, b: 2, c: 3 };
+// entries(obj1Ex3);  
+// // expected return: [["a",1], ["b",2], ["c",3]]
+console.log("    Test case 2");
+
+// let obj2Ex3 = { first: 'Matt', last: 'Lane', isDogOwner: true };
+// entries(obj2Ex3);
+// // expected return [["first","Matt"], ["last","Lane"], ["isDogOwner",true]]
+
+console.log("    Test case 3");
+// [["first","Matt"], ["last","Lane"], ["isDogOwner",true]]
+// let obj3Ex3 = {};
+// entries(obj3Ex3); 
+// // expected return[]
+
 
 console.log("\n*** Exercise 4");
 // Exercise 4. Write a function called pluck, which takes an array of objects and the name of a key.
