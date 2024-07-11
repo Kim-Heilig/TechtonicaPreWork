@@ -139,26 +139,36 @@ console.log(indexOf(arr3, 10)); // --> -1
 // includes('abcd', 'a', 2) // --> false
 console.log("\n*** Exercise 6");
 
-function includes(collection, num1, startIndex){
+function includes(collection, value, startIndex){
   if (typeof collection === "string" || Array.isArray(collection)){ // this checks to see if the collection is a string or an array
     if(startIndex !== undefined){  // if so, this checks to see if the startIndex is provided
-      for(let i = startIndex; i < collection.length; i++){ //
-        if (collection[i] === collection[startIndex]){
-          return true;
-        } 
-      } return false;
+      for(let i = startIndex; i < collection.length; i++){ // This loops through the variable, starting from the index
+        if (collection[i] === value){ // this sets the condition if the value is found in variable from the start index
+          return true; // if found, return true
+        } // I believe you can leave this blank and not have to return false.  Not sure about this.
+      } 
+    } else {
+      for (let i = 0; i < collection.length; i++){
+      if (collection[i] === value){
+        return true;
+      }
     }
-      return true;
-    }
+  }
+}
+  else if(typeof collection === "object"){
+    for(let key in collection){
+      if(collection[key] === value){
+        return true;
+        }
+      }
+    } return false;
+  }
 
-  } else if(Array.isArray(collection)){
-    return false;
-  }else if(typeof collection === "object"){
-
-  } return false;
-
-
-
+console.log(includes([1, 2, 3], 1)) // --> true
+console.log(includes([1, 2, 3], 1, 2)) // --> false
+console.log(includes([1, 2, 3], 6)) // --> false
+console.log(includes({ 'a': 1, 'b': 2 }, 1)) // --> true
+console.log(includes({ 'a': 1, 'b': 2 }, 'a')) // --> false
 console.log(includes('abcd', 'b')) // --> true
 console.log(includes('abcd', 'e')) // --> false
 console.log(includes('abcd', 'a', 2)) // --> false
