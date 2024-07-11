@@ -87,6 +87,7 @@ function removeFromString(str, startIndex, numRemove){
   return str.slice(startIndex, startIndex + (numRemove - 1)); // with slice, the first parameter is the beginning of extraction
                                                         // the 2nd parameter is the indexed number to stop extraction
 }
+// random comment
 
 console.log(removeFromString('Elie', 2, 2)) // --> 'El'
 // removeFromString('Elie', 0, 1) // --> 'lie'
@@ -156,7 +157,7 @@ function includes(collection, num1, startIndex){
 
   } return false;
 
-}
+
 
 console.log(includes('abcd', 'b')) // --> true
 console.log(includes('abcd', 'e')) // --> false
