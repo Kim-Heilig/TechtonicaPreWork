@@ -121,9 +121,30 @@ console.log("\n*** Exercise 4");
 // The function should return an array containing the value associated with that key for each object, or undefined if that key is not present in the object.
 // Examples:
 // pluck([{ name: "Tim" }, { name: "Matt" }, { name: "Elie" }],'name')
-// ["Tim", "Matt", "Elie"]
+// ["Tim", "Matt", "Elie"]     ???????? shouldn't this have undefined after Elie????????
 // pluck([{ name: "Tim", isBoatOwner: true }, { name: "Matt", isBoatOwner: false }, { name: "Elie" }],'isBoatOwner')
 // [true, false, undefined]
+
+// input: an array of objects & key name
+// output: an array that is the list of value associated with object that was passed in.
+
+function pluck(arrayOfObjects, key){
+  let newArray = [];
+  for(let i = 0; i < arrayOfObjects.length; i++){
+    if (key in arrayOfObjects[i]){  // mostly saying if there is (true) a key presented in the passed array of objects.
+      newArray.push(arrayOfObjects[i][key]);  // if this is not empty then I want to execute the code block to push the value
+    } else {
+      newArray.push(undefined);
+    }
+
+  }
+  return newArray;
+}
+
+console.log("\n    Test case 1"); 
+console.log(pluck([{ name: "Tim" }, { name: "Matt" }, { name: "Elie" }],'name'));
+console.log("   Test case 2");
+console.log(pluck([{ name: "Tim", isBoatOwner: true }, { name: "Matt", isBoatOwner: false }, { name: "Elie" }],'isBoatOwner'));
 
 console.log("\n*** Exercise 5");
 // Exercise 5. Write a function called stringFromObject that generates a string from an object's key/value pairs.
