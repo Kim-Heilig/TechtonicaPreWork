@@ -56,20 +56,28 @@ console.log(isEmpty(schedule) ); // false
 // Sum object properties
 // We have an object storing salaries of our team:
 
-// let salaries = {
-//   John: 100,
-//   Ann: 160,
-//   Pete: 130
-// }
+let salaries = {
+  John: 100,
+  Ann: 160,
+  Pete: 130
+}
 // Write the code to sum all salaries and store in the variable sum. Should be 390 in the example above.
 
 // If salaries is empty, then the result must be 0.
 
-function sumOfValues(obj){
-
+function sumOfValues(obj){   // This function output was "NaN", not sure why.
+  let sum = 0;
+  for(let key in obj){
+    sum += obj[key];
+  } return sum;
 }
 
 console.log("\nTASK 3:  ");
+console.log(sumOfValues(salaries));
+
+let noSalaries = {
+}
+console.log(sumOfValues(noSalaries));
 
 // TASK 4:
 
@@ -98,3 +106,20 @@ console.log("\nTASK 3:  ");
 // P.S. Use typeof to check for a number here.
 
 console.log("\nTASK 4:  ");
+
+function multiplyNumeric(obj){
+  for(let key in obj){
+    if(typeof obj[key] == "number"){
+      obj[key] *= 2;
+    }
+  } return obj;
+}
+
+// before the call
+let menu = {
+  width: 200,
+  height: 300,
+  title: "My menu"
+};
+
+console.log(multiplyNumeric(menu));
