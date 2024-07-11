@@ -88,31 +88,31 @@ console.log("\n*** Exercise 3");
 // []
 
 
-// not complete !!!!!!!!
 
 function entries(obj){
   let arrayOfArrays = [];
+
   for(let key in obj){
-    arrayOfArrays.push()
-  }
-  
+    if(obj.hasOwnProperty(key)){            // this was a hard one for me and I'm really not confident with this method.  I got most of the
+    arrayOfArrays.push([key, obj[key]]);  // exercise logic without help, but wasn't able to get there alone with this problem.
+    }
+  } return arrayOfArrays;
 }
 
 
 console.log("\n    Test case 1");
-// let obj1Ex3 = { a: 1, b: 2, c: 3 };
-// entries(obj1Ex3);  
+let obj1Ex3 = { a: 1, b: 2, c: 3 };
+console.log(entries(obj1Ex3));  
 // // expected return: [["a",1], ["b",2], ["c",3]]
 console.log("    Test case 2");
 
-// let obj2Ex3 = { first: 'Matt', last: 'Lane', isDogOwner: true };
-// entries(obj2Ex3);
+let obj2Ex3 = { first: 'Matt', last: 'Lane', isDogOwner: true };
+console.log(entries(obj2Ex3));
 // // expected return [["first","Matt"], ["last","Lane"], ["isDogOwner",true]]
 
 console.log("    Test case 3");
-// [["first","Matt"], ["last","Lane"], ["isDogOwner",true]]
-// let obj3Ex3 = {};
-// entries(obj3Ex3); 
+let obj3Ex3 = {};
+console.log(entries(obj3Ex3)); 
 // // expected return[]
 
 
