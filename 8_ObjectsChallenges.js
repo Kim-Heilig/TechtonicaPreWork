@@ -157,7 +157,26 @@ console.log("\n*** Exercise 5");
 // "name = Elie, job = Instructor, isCatOwner = false"
 // stringFromObject({}); // ""
 
+// input: object
+// output: string (in the form of obj[key] + " = " + Object.keys(obj))
+
+function stringFromObject(obj){
+  let arrayOfStrings = [];
+for(let key in obj){
+  arrayOfStrings.push(`${key} = ${obj[key]}`);
+  }
+  return arrayOfStrings.join(",");
+}
+
+console.log("\n    Test case 1"); 
+console.log(stringFromObject({ a: 1, b: '2' }));
+console.log("   Test case 2");
+console.log(stringFromObject({ name: 'Elie', job: 'Instructor', isCatOwner: false }));
+console.log("   Test case 3");
+console.log(stringFromObject({}));
+
 console.log("\n*** Exercise 6");
+
 // Exercise 6. Write a function called minMaxKeyInObject that accepts an object with numeric keys.*
 // The function should return an array with the following format: [lowestKey, highestKey]
 // Examples:
@@ -165,3 +184,14 @@ console.log("\n*** Exercise 6");
 // [1, 10]
 // minMaxKeyInObject({ 1: 'Elie', 4: 'Matt', 2: 'Tim' });
 // [1, 4]
+
+// input: 
+
+function minMaxKeyInObject(obj){
+
+}
+
+// console.log("\n    Test case 1"); 
+// console.log(pluck([{ name: "Tim" }, { name: "Matt" }, { name: "Elie" }],'name'));
+// console.log("   Test case 2");
+// console.log(pluck([{ name: "Tim", isBoatOwner: true }, { name: "Matt", isBoatOwner: false }, { name: "Elie" }],'isBoatOwner'));
