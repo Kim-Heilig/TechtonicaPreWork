@@ -185,13 +185,18 @@ console.log("\n*** Exercise 6");
 // minMaxKeyInObject({ 1: 'Elie', 4: 'Matt', 2: 'Tim' });
 // [1, 4]
 
-// input: 
+// input: an object with keys that are numeric
+// output: an array that that has two elements: the lowest key & the highest key.
 
 function minMaxKeyInObject(obj){
-
+  let keys = Object.keys(obj);
+  let keysInObject = keys.map(Number)
+  let lowestKey = Math.min(...keysInObject);
+  let highestKey = Math.max(...keysInObject);
+  return [lowestKey, highestKey];
 }
 
-// console.log("\n    Test case 1"); 
-// console.log(pluck([{ name: "Tim" }, { name: "Matt" }, { name: "Elie" }],'name'));
-// console.log("   Test case 2");
-// console.log(pluck([{ name: "Tim", isBoatOwner: true }, { name: "Matt", isBoatOwner: false }, { name: "Elie" }],'isBoatOwner'));
+console.log("\n    Test case 1"); 
+console.log(minMaxKeyInObject({ 2: 'a', 7: 'b', 1: 'c', 10: 'd', 4: 'e' }));
+console.log("   Test case 2");
+console.log(minMaxKeyInObject({ 1: 'Elie', 4: 'Matt', 2: 'Tim' }));
